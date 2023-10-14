@@ -38,7 +38,7 @@ mod default_version;
 mod directories;
 
 fn main() {
-    env_logger::init();
+    env_logger::init_from_env("FNM_LOG");
     let value = crate::cli::parse();
     value.subcmd.call(value.config);
 }
